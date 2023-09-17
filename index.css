@@ -20,10 +20,12 @@
     grid-column-end: 5;
     grid-row-start: 0;
     grid-row-end: 1;
-    height: 70px;
+    min-height: 70px;
     font-size: 4em;
     padding: 10px 10px 10px 10px;
     text-align: right;
+
+    word-wrap: break-word;
 }
 
 .main .keypad{
