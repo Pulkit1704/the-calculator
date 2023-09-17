@@ -1,3 +1,17 @@
+
+h1{
+    text-align: center;
+    font-size: 4rem;
+    margin: 2px; 
+    color: rgb(233, 198, 2); 
+}
+
+h2{
+    text-align: center;
+    font-size: 2rem;;
+    color: rgb(88, 87, 87); 
+}
+
 .main{
     border: 5px solid rgb(43, 41, 41); 
     border-radius: 10px;
@@ -6,10 +20,10 @@
     grid-template-rows: repeat(4, 1fr);
     width: 500px; 
     height: 700px; 
-    position: fixed; 
+    position: relative; 
     top: 50%; 
     left: 50%; 
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
 }
 
 .main .output{

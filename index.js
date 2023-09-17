@@ -36,8 +36,14 @@ function parseLabel(){
     num1 = parseFloat(numbers[0]) 
     num2 = parseFloat(numbers[1]) 
     operation = label.textContent.match(re) 
-    
-    label.textContent = executeExpression(num1, num2, operations_map[operation]) 
+
+    result = executeExpression(num1, num2, operations_map[operation])
+
+    if(result === 42){
+        label.textContent = "The question remains unanswered ;)"
+    }else{
+        label.textContent = result; 
+    }
 }
 
 function executeExpression(arg1, arg2, func){
@@ -53,8 +59,6 @@ function keyPress(e){
 }
 
 function handle_keystrokes(e){
-
-    console.log(e.key) 
 
     if(e.key >= 0 && e.key <= 9){
         label.textContent = label.textContent + String(e.key) 
