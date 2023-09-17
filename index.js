@@ -55,6 +55,12 @@ function clearLabel(){
 }
 
 function keyPress(e){
+
+    if(e.target.textContent === "_x"){
+        label.textContent = label.textContent.slice(0, label.textContent.length -1) 
+        return 
+    }
+
     label.textContent = label.textContent + e.target.textContent; 
 }
 
@@ -69,8 +75,11 @@ function handle_keystrokes(e){
         case "Enter":
             parseLabel()
             break
-        case "Backspace":
+        case "Esc":
             clearLabel()
+            break
+        case "Backspace":
+            label.textContent = label.textContent.slice(0, label.textContent.length -1) 
             break
         case "+":
             label.textContent = label.textContent + "+"
