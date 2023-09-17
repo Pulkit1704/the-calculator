@@ -41,7 +41,6 @@ function parseLabel(){
 }
 
 function executeExpression(arg1, arg2, func){
-    console.log(func) 
     return func(arg1, arg2) 
 }
 
@@ -53,8 +52,47 @@ function keyPress(e){
     label.textContent = label.textContent + e.target.textContent; 
 }
 
+function handle_keystrokes(e){
+
+    console.log(e.key) 
+
+    if(e.key >= 0 && e.key <= 9){
+        label.textContent = label.textContent + String(e.key) 
+        return 
+    }
+
+    switch (e.key){
+        case "Enter":
+            parseLabel()
+            break
+        case "Backspace":
+            clearLabel()
+            break
+        case "+":
+            label.textContent = label.textContent + "+"
+            break 
+        case "-":
+            label.textContent = label.textContent + "-"
+            break 
+        case "*":
+            label.textContent = label.textContent + "*"
+            break 
+        case "/": 
+            label.textContent = label.textContent + "/"
+            break 
+        case ".":
+            label.textContent = label.textContent + "."
+            break 
+        default: 
+            return 
+    }
+}
+
 
 function main(){
+
+    window.addEventListener("keydown", handle_keystrokes) 
+
     var keypad = document.querySelector(".main .keypad") 
     keypad.addEventListener('click', keyPress) 
 
