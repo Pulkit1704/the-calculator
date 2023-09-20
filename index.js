@@ -107,10 +107,16 @@ function main(){
     window.addEventListener("keydown", handle_keystrokes) 
 
     var keypad = document.querySelector(".main .keypad") 
-    keypad.addEventListener('click', keyPress) 
+    // apply the event listener to each of the child elements, 
+    Array.from(keypad.children).forEach(element => {
+        element.addEventListener('click', keyPress) 
+    })
 
     var operation_pad = document.querySelector(".main .operations") 
-    operation_pad.addEventListener('click', keyPress) 
+
+    Array.from(operation_pad.children).forEach(element =>{
+        element.addEventListener('click', keyPress) 
+    })
 
     var clear_button = document.querySelector(".button.clear") 
     clear_button.addEventListener('click', clearLabel) 
