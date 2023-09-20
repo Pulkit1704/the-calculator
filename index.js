@@ -75,7 +75,7 @@ function handle_keystrokes(e){
         case "Enter":
             parseLabel()
             break
-        case "Esc":
+        case "Escape":
             clearLabel()
             break
         case "Backspace":
